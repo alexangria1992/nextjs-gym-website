@@ -36,14 +36,34 @@ const About = () => {
       <div className="container mx-auto">
         {/* Text Section */}
         <div className="flex flex-col items-center gap-2 mb-8">
-          <h2 className="h2 text-center">About us</h2>
-          <p className="mx-auto text-center border-2 border-red-300">
+          <motion.h2
+            variants={fadeIn("up", 0.4)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
+            className="h2 text-center"
+          >
+            About us
+          </motion.h2>
+          <motion.p
+            variants={fadeIn("up", 0.6)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
+            className="mx-auto text-center border-2 border-red-300"
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
             excepturi illum quibusdam ratione necessitatibus.
-          </p>
+          </motion.p>
         </div>
         {/* Featured Items */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-16 ">
+        <motion.div
+          variants={fadeIn("up", 0.8)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-16 "
+        >
           {featured.map((feature, index) => {
             return (
               <div
@@ -60,9 +80,16 @@ const About = () => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
         {/* achievements */}
-        <Achievements />
+        <motion.div
+          variants={fadeIn("up", 1)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <Achievements />
+        </motion.div>
       </div>
     </section>
   );
